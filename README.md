@@ -1,191 +1,91 @@
 # EVALUATING THE PASSENGER EXPERIENCE OF AIRLINE SERVICES
+![image](https://github.com/user-attachments/assets/328371d4-3028-499f-962c-2d461cd4af8a)
+
+
 With the project “**EVALUATING THE PASSENGER EXPERIENCE OF AIRLINE SERVICES**” aims to support administrators in making more accurate decisions with the combination of Dashboard and Chatbot.
-# (Phase 1): Extract - Transform - Load (ETL) 
-**The Analysis And Forecast Of Perfume Demand Project:** requires data on products, customers and purchase information. For the project we aggregate data from different sources from python's faker library, API and kaggle.
-![image](https://github.com/user-attachments/assets/b0d0e145-33bd-4d8c-a865-a4e3d3cae0e6)
-# (Phase 2): Overview and Forecasting 
-**Visualization and Forecasting for Project:** Here we use a web framework Streamlit to help us present the results of the report and forecast. In Streamlit, users can interact with the chart at will and it can work online near realtime.
-![image](https://github.com/user-attachments/assets/1b1338ec-ea74-4192-a569-ca26519daaf0)
-## Team members
-* **Team Leader/Analytics Engineer/BI Engineer:** Oversee the entire project, planning and support on both technical and non-technical aspects.
-  * [Hoang Nam](https://www.facebook.com/namnew2003/): Data Science & Business Analytics at DUE
-* **Other members:** Conduct data discovery and documentation, uncover business insights and provide client-driven recommendations.
-  * [Bich Hoa](https://www.facebook.com/bich.hoa.050303): Data Science & Business Analytics at DUE
-  * [My Linh](https://www.facebook.com/mylinhh1853): Data Science & Business Analytics at DUE
+
+Dashboard: https://lookerstudio.google.com/embed/reporting/f008b793-b63f-4d46-833e-8358b7403234/page/WiLaE
+
+Chatbot: https://shorturl.at/OOpRT
+# VietNam Airlines Review (Phase 1)
+
+**Evaluating The Passenger Experience Of Airline Services:** Analyze Customer Experience
+This project will simulate a data team at VietNam Airlines, from ETL to Business Intelligence and Data Science. We will extract real-time data from [Air Inequality](https://www.airlinequality.com/airline-reviews/vietnam-airlines)
+
+**Example Dashboard**
+
+![image](https://github.com/user-attachments/assets/aa27938b-a084-4480-8f8a-f9b0abaae28c)
+
+# VietNam Airlines Review (Phase 2)
+
+**Text2SQL for VietNam Airlines:** 
+The **Text2SQL for VietNam Airlines** utilizes cutting-edge technology stacks like  **LangChain** serves as the vector database, enabling efficient storage and retrieval of customer review embeddings. **LangChain** powers the chatbot's integration of retrieval and generative AI, allowing for contextually accurate responses. This combination ensures fast, intelligent analysis of customer reviews, enhancing British Airways' ability to address feedback and improve customer satisfaction.
+
+**Example Text2SQL response**
+![image](https://github.com/user-attachments/assets/ea1547d7-65b9-454b-b903-58d989d45e1c)
+
 ## About the data
+
 ### Data Source
-#### (Data is taken from Kaggle and API from Ebay e-commerce platform)
-* **Product Data:**
-  * `Product_id`: Identifier of each product.
-  * `Brand`: The brand of the perfume.
-  * `Title`: The title of the listing.
-  * `Type`:  The type of perfume (e.g., Eau de Parfum, Eau de Toilette).
-  * `Price`: The price of the perfume.
-  * `PriceWithCurrency`: The price with currency notation.
-  * `Available`: The number of items available.
-  * `AvailableText`: Text description of availability.
-  * `Sold`: The number of items sold.
-  * `LastUpdated`: The last updated timestamp of the listing.
-  * `ItemLocation`: The location of the item.
-#### (Data is extracted from API and created in `ETL_data.ipynb` file)
-* **Weather_location Data:**
-  * `time`: Time of weather data recording (by day, month, or year). Used to identify a specific time for weather data.
-  * `tavg`: Average temperature (°C), showing the average temperature during the recorded time period.
-  * `tmin`: Minimum temperature (°C), recording the minimum temperature during the day or observation period.
-  * `tmax`: Maximum temperature (°C), recording the maximum temperature during the day or observation period.
-  * `prcp`: Precipitation (mm), measuring the amount of rain recorded during the time period.
-  * `snow`: Snowfall (mm), measuring the amount of snowfall during the time period (if any).
-  * `wdir`: Wind direction (degrees), showing the wind direction in degrees from 0° (North) to 360° (South).
-  * `wspd`: Average wind speed (m/s), measuring the average wind speed during the time period.
-  * `wpgt`: Maximum wind speed (m/s), records the strongest wind speed during the observation period.
-  * `pres`: Average air pressure (hPa), measures the atmospheric pressure at the recorded time.
-  * `tsun`: Sunshine duration (minutes), total time the sun appears during the day.
-* **Coordinates_location Data:**
-  * `city`: City name. This is information used to identify a specific location in the data.
-  * `lat`: The latitude of the city, showing the geographic location in the North-South direction on Earth.
-  * `lon`: The longitude of the city, showing the geographic location in the East-West direction on Earth.
-#### (The data is generated from Python libraries and is created in the `ETL_data.ipynb` file.)
-* **Customer Data:**
-  * `Customer_id`: A unique identifier for each customer. Used to distinguish customers in the database.
-  * `Name`: The customer's full name.
-  * `Address`: The customer's address, which helps identify the customer's place of residence or geographic location.
-  * `Job`: The customer's occupation, which provides information about the field of work or professional role.
-  * `Sex`: The customer's gender (e.g., Male, Female).
-  * `Age`: The customer's age, often used for demographic analysis.
-  * `Phone`: The customer's contact phone number, used for communication or support purposes.
-  * `Email`: The customer's email address, often used for notifications, communications, or email marketing.
-* **Order Data:**
-  * `Order_time`: Order time, showing the date and time the order was created. This information is important for tracking and analyzing order trends over time.
-  * `Order_id`: A unique identifier for each order. Used to distinguish and retrieve detailed information about each order.
-  * `Customer_id`: The identifier of the customer associated with the order. This is a foreign key, connecting data to the customer table.
-  * `Total`: The total value of the order, calculated based on the price and quantity of each product in the order. 
-* **Order_details Data:**
-  * `Orderdetail_id`: Unique identifier for each detail item in the order. Used to distinguish items in the order details table.
-  * `Order_id`: The identifier of the order linked to the order details. This is a foreign key, connecting data to the order table.
-  * `Sanpham_id`: The identifier of the product, linked to the product table. Used to identify the type of product in the order details.
-  * `Quanlity`: The quantity of the product in the order.
-  * `Price`: The price of the product (per unit), recorded to calculate the total order value.
+[Air Inequality](https://www.airlinequality.com/airline-reviews/vietnam-airlines) is a robust platform for assessing VietNam Airlines's service quality through diverse customer reviews and ratings. Providing insights into cabin comfort, amenities, and overall satisfaction, enables customers to share feedback. However, the data's reliance on customer surveys may introduce bias.
+
 ### Cleaned Data
-  * `order_time`: Order time, showing the date and time the order was created. This information is important for tracking and analyzing order trends over time.
-  * `orderdetail_id`: Unique identifier for each detail item in the order. Used to distinguish items in the order details table.
-  * `order_id`: A unique identifier for each order. Used to distinguish and retrieve detailed information about each order.
-  * `customer_id`: A unique identifier for each customer. Used to distinguish customers in the database.
-  * `product_id`: Identifier of each product.
-  * `brand`: The brand of the perfume.
-  * `type`:  The type of perfume (e.g., Eau de Parfum, Eau de Toilette).
-  * `price`: The price of the perfume.
-  * `quanlity`: The quantity of the product in the order.
-  * `itemLocation`: The location of the item.
-  * `weather`: Weather that the product is suitable for.
-  * `address`: The customer's address, which helps identify the customer's place of residence or geographic location.
-  * `sex`: The customer's gender (e.g., Male, Female).
-  * `age`: The customer's age, often used for demographic analysis.
-  * `lat`: The latitude of the location, which supports spatial analysis or visualization on a map.
-  * `lon`: The longitude of the location, combined with lat to determine the exact geographic location.
-  * `Doanh thu`: The total revenue of the order, calculated as `price` × `quantity` for each product in the order.
-# Forecast And Business Plan Proposal
+- `Id`: Order of each review, where smaller numbers represent later reviews. (Ordinal, Int)
+- `Date review`: The date when the review was conducted. (Ordinal, Date)
+- `Day review`: The day of the week when the review was conducted. (Discrete, Int)
+- `Month review`: The month when the review was conducted. (Ordinal, String)
+- `Month review num`: The numerical representation of the month when the review was conducted. (Discrete, Int)
+- `Year review`: The year when the review was conducted. (Discrete, Int)
+- `Verified`: Indicates whether the review was successfully verified or not. (Nominal, String)
+- `Name`: Name of the passenger who provided the review. (Nominal, String)
+- `Month fly`: The month of the flight date. (Ordinal, String)
+- `Month fly num`: The numerical representation of the month of the flight date. (Discrete, Int)
+- `Year fly`: The year of the flight date. (Discrete, Int)
+- `Month year fly`: The month and year of the flight date. (Ordinal, Date)
+- `Country`: Nationality of the passenger. (Nominal, String)
+- `Aircraft`: Type of the airplane used for the flight. (Nominal, String)
+- `Type`: Purpose of the flight (e.g., business, leisure). (Nominal, String)
+- `Seat Type`: Class of the seat (e.g., Economy, Business). (Ordinal, String)
+- `Origin`: Departure location of the passenger. (Nominal, String)
+- `Destination`: Final destination of the passenger. (Nominal, String)
+- `Transit`: Location where the passenger was transited. (Nominal, String)
+- `Seat Comfort`: Passenger’s evaluation of seat comfort on a scale of 1 to 5. (Ordinal, Int)
+- `Cabin service`: Passenger’s evaluation of the cabin service on a scale of 1 to 5. (Ordinal, Int)
+- `Ground service`: Passenger’s evaluation of the ground service on a scale of 1 to 5. (Ordinal, Int)
+- `Wifi`: Passenger’s evaluation of the on-board wifi connection on a scale of 1 to 5. (Ordinal, Int)
+- `Money value`: Passenger's evaluation of how the flight experience corresponds to the money paid on a scale of 1 to 5. (Ordinal, Int)
+- `Score`: Average of the scores given by the passenger on seat comfort, cabin service, ground service, wifi, and money value. (Continuous, Float)
+- `Experience`: Overall rating of the flight experience categorized into poor, fair, and good. (Ordinal, String)
+- `Recommended`: Indicates whether the passenger would recommend the same flight experience. (Nominal, String)
+- `Review`: Detailed feedback provided by the passenger regarding their flight experience. (Nominal, String)
 
-## Temperature and product type:
-### Northern region (Hanoi, Hai Phong):
-- The lowest average temperature ranges from **19.93°C** to **20.64°C**, indicating that winter is colder than other regions.
-![image](https://github.com/user-attachments/assets/0c9cfb48-fc0f-4b4b-954d-10a5f7675a5e)
-![image](https://github.com/user-attachments/assets/dff4300c-3fb9-4e4e-b4d6-f790fdf4262d)
-
-- Here, with the seasonal nature of temperature, we will look at the past temperature in **Ha Noi** and **Hai Phong** from 12/2023 to the end of 02/2024.
-
-![image](https://github.com/user-attachments/assets/e00f07c2-3462-4cea-81fe-6e88e66cc150)
-![image](https://github.com/user-attachments/assets/1e062c7f-3458-4437-a279-96ff3bea7aeb)
-
-- From the forecast temperature and the past temperature of **Ha Noi** and **Hai Phong** in the period from 12/2023 to the end of 02/2024, the temperature is very low and it always fluctuates with the temperature from **14.9°C** đến **22.15°C**  and in this temperature range with the type of product suitable for this customer is similar to our forecast that **Eau De Parfum** and **Perfume** have a concentration of **Eau De Parfum (15-20%)** and **Perfume (20-30%)** from 15-30%.
-
-![image](https://github.com/user-attachments/assets/a749f336-1195-4134-a880-1cf2efeb226e)
-
-- In the Northern market at 2 locations, **Ha Noi** and **Hai Phong**, **Eau De Parfum** is more dominant than **Perfume** and people prefer to use **Eau De Parfum**.
-### Central region (Da Nang, Hue):
-- The lowest average temperature ranges from **22.64°C (Hue)** to **25.45°C (Nha Trang)**, warmer than the North.
-
-![image](https://github.com/user-attachments/assets/49ffb7a3-474f-4d08-b706-4ecd7304ee75)
-![image](https://github.com/user-attachments/assets/3dd026db-3858-45c8-8582-67921173dab3)
-
-- Here, with the seasonal nature of temperature, we will look at the past temperature in **Hue** and **Da Nang** from December 2023 to the end of February 2024.
-
-![image](https://github.com/user-attachments/assets/73fa2a76-fd6b-40aa-8f6d-f89911c3b8a4)
-![image](https://github.com/user-attachments/assets/913ca52f-53d4-4b08-ace0-0f15fbbac987)
-
-- From the forecast temperature and the past temperature of **Hue**, **Da Nang** in the period of 12/2023 to the end of 02/2024, the average temperature is warmer than the North and it always goes sideways with the temperature from **20°C** to **25°C** and in this temperature range with the type of product suitable for this customer is similar to our forecast of **Eau De Toilette** and **Eau De Parfum** with the concentration of **Eau De Toilette (5-15%)** and **Eau De Parfum (15-20%)** from 5-20%.
-
-![image](https://github.com/user-attachments/assets/1a5d3134-3623-4e95-a66c-70500e15040c)
-
-- In **Da Nang** market, **Eau De Toilette** is higher than **Eau De Parfum**, but in **Hue** market, there is another advantage, **Eau De Parfum** is much higher than **Eau De Toilette**.
- ### Southern and South Central region (Ho Chi Minh, Ca Mau, Nha Trang):
-- The lowest average temperature ranges from **26.16°C** to **26.99°C**, higher than both the North and Central regions, reflecting the typical hot and humid tropical monsoon climate.
-
-![image](https://github.com/user-attachments/assets/354cd4ec-8286-4ca3-bf5c-f2c22fc278ec)
-![image](https://github.com/user-attachments/assets/17fabe5c-cd41-4fe2-9d56-f2216fb52e3c)
-![image](https://github.com/user-attachments/assets/626981b2-6580-4478-8157-ca5692ae2822)
-
-- Here, with the seasonal nature of temperature, we will look at the past temperature in **Ho Chi Minh**, **Ca Mau** and **Nha Trang** from December 2023 to the end of February 2024.
-
-![image](https://github.com/user-attachments/assets/24882092-c998-4d3d-9540-f20dc8ecfd29)
-![image](https://github.com/user-attachments/assets/0c1d16ed-49af-4e90-8fb6-082f1a79326b)
-![image](https://github.com/user-attachments/assets/85e5768e-5b65-4d81-8771-a47025bf2bc0)
-
-- From the forecast temperature and historical temperature of **Ho Chi Minh City**, **Ca Mau** and **Nha Trang** in the period from 12/2023 to the end of 02/2024, the temperature is high, slightly higher than that of the North and Central regions and it always goes sideways with the temperature from **27°C** to **29°C** and is in this temperature range with **Eau De Cologne** and **Eau De Toilette** with concentration of **Eau De Cologne (2-4%)** and **Eau De Toilette (5-15%)**.
-
-![image](https://github.com/user-attachments/assets/51a86a5b-d0a2-49a2-99bf-866d11954630)
-
-- In the Southern and South Central markets, people use two types of perfumes: **Eau De Cologne** and **Eau De Toilette**, but consumers prefer **Eau De Toilette**.
-## Manufacturer:
-- With big perfume manufacturers like **Dior** and **Chanel** will be the top priority because it has a large traffic compared to other perfume brands.
-
-![image](https://github.com/user-attachments/assets/0cd7ab80-7ce9-4ebf-98cc-24a44467294e)
-![image](https://github.com/user-attachments/assets/924d11cf-30b9-4b7f-99d3-ff8e9820aa01)
-![image](https://github.com/user-attachments/assets/be2d3ac1-f6b1-4c82-ab6a-a326be9c0f91)
-![image](https://github.com/user-attachments/assets/094b6b65-81c0-431e-aa33-33f836066f01)
-
-- With the search volume for products of two big brands like **Dior** and **Chanel** in the past being very high, it can be said that it is double that of other brands. With the forecast for the import and distribution plan for the next 90 days, the forecast for the search volume of Dior and Chanel perfumes tends to increase well, with Gucci and Bharara also being two famous brands in the market but the forecast for the next 90 days is that the search volume will gradually decrease.
-## Business Plan Recommendations for next 90 days:
-### Manufacturer:
-- **Focus on two major perfume brands:** **Dior** and **Chanel**.
-### Product Type:
- **Northern Region (Hanoi, Hai Phong):**
-- Advertise and reach customers with **Eau De Parfum (15-20%)** concentration and **Perfume (20-30%)** concentration products.
-- Prioritize importing and marketing **Eau De Parfum** as the main product.
-
- **Central region (Da Nang, Hue):**
-- Advertise and reach customers with **Eau De Toilette (5-15%)** concentration and **Eau De Parfum (15-20%)** concentration products.
-- Prioritize importing and marketing **Eau De Parfum** in **Hue** as the main product.
-
- **Southern and South Central region (Ho Chi Minh, Ca Mau, Nha Trang):**
-- Advertise and reach customers with **Eau De Cologne (2-4%)** concentration and **Eau De Toilette (5-15%)** concentration products.
-- Prioritize importing and marketing **Eau De Toilette** in **Ho Chi Minh** as the main product.
 ## Project Flow Chart
 
 ## Project Steps
-### 1. Extract - Transform - Load (ETL) - ETL Pipeline
-The pipeline helps update and store data contained in the `ETL_data.ipynb` file. The data in this system is run automatically by the APScheduler library, which synthesizes product data files, data from libraries and APIs, then transforms and extracts it and stores it in the local Database.
+### 1. Extract - Transform - Load (ETL) - Airline Quality ETL Pipeline
 
-**- Data Extraction:**
-+ Synthesize product data from the `data_sanpham.csv` file.
-+ Combine MeteoStat and Faker libraries to create simulated customer data, orders, detailed orders and nominatim API to get data on the coordinates of cities.
+This repository contains an Extract, Transform, Load (ETL) pipeline implementation that periodically collects customer reviews of British Airways from AirlineQuality.com. The data is processed and used for analytics and machine learning purposes. The pipeline is designed in Cloud Run to enable the pipeline to run in real-time with the Google Cloud Platform.
 
-**- Data Cleaning:**
-+ Use the pandas library to clean the data in the `data_sanpham.csv` file such as removing duplicates, handling null values ​​and handling outliers
 
-**- Feature Engineering and Transformation:**
-+ Here I use 2 models, ARIMA and LSTM, extracting values ​​and using models in the code in the `Metric.py` file
-+ Training the LSTM model to predict the weather in the file `Modeltrain_LSTM.ipynb`
-#### 1.1 Usage
-Here are the steps to setup and run the pipeline:
-1. Need a code running environment like VS Code or Jupyter Notebook, ... and download the above files to the same place as the code running environment folder.
-2. Open the `ETL_data.ipynb` file and need to install the necessary libraries first, open your SQL server and fill in your server information in the section that needs to be replaced in the `ETL_data.ipynb` file and run it, because it is scheduled to run every 5 minutes so you need to wait.
-### 2. Data Analysis & Predictive Modelling
-- We present actionable results overview charts for senior executives on the Dashboard side, and on the Analytics side we include more in-depth data on customers, products, and orders.
 
-![image](https://github.com/user-attachments/assets/751b7d9b-cfc4-4019-8b58-33e32f1d8bc0)
-- With the forecasting model we are using to predict what the weather will be like in the next 90 days and what the search traffic for keywords related to the product will be in the coming months. This data combined with the company's historical data will help senior management make better decisions.
+#### 1.1 Data Extraction (extract.py):
+The `Extract.py` script scrapes real-time reviews from the British Airways page on the Airline Quality website using BeautifulSoup and requests. It iterates through specified pages, extracting review details like date, customer name, country, review body, and ratings on various aspects of the airline service.
 
-![image](https://github.com/user-attachments/assets/00562da4-6484-4c9c-811e-f656163b43d5)
-### 3. Project overview video
-[![End to end Project DataScience ( Analysis And Forecast Of Perfume Demand)](https://img.youtube.com/vi/<StL3QEe50uQ>/0.jpg)](https://youtu.be/StL3QEe50uQ)
+#### 1.2 Data Cleaning (data_cleaning.py):
+**The ETL.py script processes the data through the transform() function, which includes the following steps:**
+Data Cleaning: Standardizes and cleans various columns like country, review, date_review, date_flown, route, and aircraft.
+Feature Engineering: Calculates new features such as experience and service_score based on existing columns.
+Data Formatting: Renames columns, reorders them (before and after feature engineering), and standardizes values (e.g., 'Yes/No' to Boolean).
+Data Handling: Generates unique IDs and fills missing values.
+All these transformations are chained together using pandas' .pipe() method within the transform() function in ETL.py.
 
+#### 1.3 Why This Pipeline?
+The purpose of this ETL pipeline is to automate the collection and preprocessing of valuable airline customer feedback data. Analyzing customer reviews can reveal insights into overall customer satisfaction, service quality, and areas needing improvement. By scheduling the pipeline to run every fifteen minutes, we can track changes in customer sentiment over time, allowing for timely data-driven decisions.
+
+#### 1.4 Conclusion
+This ETL pipeline is a key component in understanding customer feedback and driving service quality improvements for VietNam Airlines. The 15-minute schedule ensures a constant flow of new data, allowing for continuous monitoring and analysis.
+
+For any issues or contributions to this pipeline, please open an issue or pull request.
+### 2. ChatBot
+Here's an overview ChatBot scripts:
+* [ChatBot_Scripts](https://github.com/Namdataa/ChatBotCloud)
